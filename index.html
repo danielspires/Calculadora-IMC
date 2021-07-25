@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calcule seu IMC</title>
+        <script src="script.js"></script>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .nocontainer{
+                border: 1px solid black;
+                background-color: lightgray;
+                width: 300px;
+                height: 300px;
+                margin: calc(50vh / 2) auto;
+            }
+
+            h1{
+                margin: 0;
+                text-align: center
+            }
+
+            label{
+                margin-left: 10px;
+            }
+
+            .container{
+                display: flex;
+                flex-direction: column;
+            }
+
+            input[type=number]{
+                padding: 10px;
+            }
+
+            input[type=submit]{
+                background-color: rgb(230, 233, 230);
+                padding: 10px;
+                width: 50%;
+                margin: 10px auto;
+            }
+            input[type=submit]:hover{
+                background-color: rgb(194, 196, 194);
+                cursor: pointer;
+            }
+
+            span{
+                margin: 5px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nocontainer">
+            <h1>CALCULE SEU IMC</h1>
+            <div class="container">
+                <label for="peso">Digite seu peso</label>
+                <input id="peso" name="peso" type="number" placeholder="25,2" onchange="verificarNegativo(this.id)" step="0.01">
+                <label for="altura">Digite sua altura</label>
+                <input id="altura" name="altura" type="number" placeholder="1,80" onchange="verificarNegativo(this.id)" step="0.01">
+                <span></span>
+                <input type="submit" value="Calcular" onclick="calcularImc()">
+            </div>
+        </div>
+    </body>
+</html>
